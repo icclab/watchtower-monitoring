@@ -1,0 +1,42 @@
+# Watchtower monitoring configuration
+name: watchtower-monitoring
+  
+# Kafka producer configuration
+kafkaProducerConfiguration:
+  topic: watchtower-monitoring-events
+  metadataBrokerList: watchtower:9092
+  serializerClass: kafka.serializer.StringEncoder
+  partitionerClass:
+  requestRequiredAcks: 1
+  requestTimeoutMs: 10000
+  producerType: sync
+  keySerializerClass:
+  compressionCodec: none
+  compressedTopics:
+  messageSendMaxRetries: 3
+  retryBackoffMs: 100
+  topicMetadataRefreshIntervalMs: 600000
+  queueBufferingMaxMs: 5000
+  queueBufferingMaxMessages: 10000
+  queueEnqueueTimeoutMs: -1
+  batchNumMessages: 200
+  sendBufferBytes: 102400
+  clientId : watchtower-monitoring-producer
+
+# Logging settings.
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: info
+  
+  loggers:
+    watchtower.monitoring: info
+  
+  appenders:
+    - type: file
+      currentLogFilename: /var/log/watchtower/watchtower-monitoring.log
+      threshold: info
+      archive: true
+      archivedLogFilenamePattern: /var/log/watchtower/watchtower-monitoring-%d.log.gz
+      archivedFileCount: 5
+      timeZone: UTC
+      logFormat: # TODO
