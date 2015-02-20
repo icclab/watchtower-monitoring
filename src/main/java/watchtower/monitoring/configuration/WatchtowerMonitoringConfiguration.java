@@ -22,7 +22,7 @@ public class WatchtowerMonitoringConfiguration extends Configuration {
   @NotNull
   private String name;
   
-  @Valid
+  //@Valid
   @NotNull
   private KafkaProducerConfiguration kafkaProducerConfiguration;
   

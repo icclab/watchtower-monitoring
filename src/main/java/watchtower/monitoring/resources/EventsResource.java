@@ -13,30 +13,32 @@
  */
 package watchtower.monitoring.resources;
 
-import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import watchtower.common.event.Event;
 import watchtower.monitoring.producer.KafkaProducer;
 
 import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
-import com.google.inject.assistedinject.Assisted;
 
 @Path("/v1.0/events")
 public class EventsResource {
+  private static final Logger logger = LoggerFactory.getLogger(EventsResource.class);
+      
   private KafkaProducer kafkaProducer;
   
   @Inject
-  public EventsResource(@Assisted KafkaProducer kafkaProducer) {
+  public EventsResource(KafkaProducer kafkaProducer) {
     this.kafkaProducer = kafkaProducer;
   }
   
@@ -44,7 +46,8 @@ public class EventsResource {
   @Timed
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public Response create(@Context UriInfo uriInfo, @Valid @QueryParam("event") Event event) {
+  public Response create(@Context UriInfo uriInfo, Event event) {
+    logger.info("Received {}", event);
     kafkaProducer.send(event);
     return Response.ok().build();
   }

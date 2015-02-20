@@ -36,7 +36,7 @@ public class KafkaProducer {
   private final Producer<String, String> producer;
   
   @Inject
-  public KafkaProducer(@Assisted WatchtowerMonitoringConfiguration configuration) {
+  public KafkaProducer(WatchtowerMonitoringConfiguration configuration) {
     this.producerConfiguration = configuration.getKafkaProducerConfiguration();
     ProducerConfig producerConfig = new ProducerConfig(getKafkaProperties());
     producer = new Producer<String, String>(producerConfig);

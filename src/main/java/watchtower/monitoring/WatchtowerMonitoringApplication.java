@@ -17,6 +17,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import watchtower.monitoring.configuration.WatchtowerMonitoringConfiguration;
+import watchtower.monitoring.producer.KafkaProducer;
 import watchtower.monitoring.resources.EventsResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -38,8 +39,6 @@ public class WatchtowerMonitoringApplication extends Application<WatchtowerMonit
     Injector injector = Guice.createInjector(new WatchtowerMonitoringModule(configuration, environment));
     
     environment.jersey().register(injector.getInstance(EventsResource.class));
-    
-    
   }
 
   @Override
