@@ -13,7 +13,6 @@
  */
 package watchtower.monitoring.configuration;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import io.dropwizard.Configuration;
@@ -22,7 +21,6 @@ public class WatchtowerMonitoringConfiguration extends Configuration {
   @NotNull
   private String name;
   
-  //@Valid
   @NotNull
   private KafkaProducerConfiguration kafkaProducerConfiguration;
   

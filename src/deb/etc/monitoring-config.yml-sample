@@ -5,7 +5,7 @@ name: watchtower-monitoring
 server:
   applicationConnectors:
     - type: http
-      port: 8080
+      port: 9010
   
 # Kafka producer configuration
 kafkaProducerConfiguration:
