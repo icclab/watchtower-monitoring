@@ -2,7 +2,7 @@
 
 case "$1" in
   configure)
-  	if ! [ `egrep -i "^groupname" /etc/group` ]; then
+  	if ! [ `egrep -i "^watchtower:" /etc/group` ]; then
   	  addgroup --system watchtower
   	fi
   	
@@ -13,7 +13,7 @@ case "$1" in
     
     if ! [ -d "/var/log/watchtower/" ]; then
       mkdir -p /var/log/watchtower/
-      chown watchtower-monitoring:watchtower /var/log/watchtower/
+      chgrp watchtower /var/log/watchtower/
       chmod g+w /var/log/watchtower/
     fi
   ;;
