@@ -2,7 +2,7 @@
 
 case "$1" in
   remove|purge)
-    userdel watchtower-monitoring
+    deluser watchtower-monitoring
   ;;
 esac
 

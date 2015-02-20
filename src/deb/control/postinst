@@ -3,14 +3,18 @@
 case "$1" in
   configure)
   	if ! [ `egrep -i "^groupname" /etc/group` ]; then
-  	  addgroup --system watchtower 
+  	  addgroup --system watchtower
+  	fi
+  	
   	if ! [ `getent passwd watchtower-monitoring` ]; then
-      adduser --system --group -G watchtower watchtower-monitoring
+      adduser --system --group --no-create-home watchtower-monitoring
+      adduser watchtower-monitoring watchtower 
     fi
     
     if ! [ -d "/var/log/watchtower/" ]; then
       mkdir -p /var/log/watchtower/
       chown watchtower-monitoring:watchtower /var/log/watchtower/
+      chmod g+w /var/log/watchtower/
     fi
   ;;
 esac

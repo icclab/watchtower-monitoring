@@ -22,7 +22,7 @@
       <destName>watchtower-monitoring.jar</destName>
     </file>
     <file>
-        <source>${project.basedir}/src/deb/etc/watchtower-monitoring-config.yml-sample</source>
+        <source>${project.basedir}/src/deb/etc/monitoring-config.yml-sample</source>
         <outputDirectory>examples</outputDirectory>
     </file>
     <file>

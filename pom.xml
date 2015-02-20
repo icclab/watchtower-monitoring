@@ -220,9 +220,9 @@
 								<data>
 									<type>file</type>
 									<src>
-										${project.basedir}/src/deb/etc/watchtower-monitoring-config.yml-sample
+										${project.basedir}/src/deb/etc/monitoring-config.yml-sample
 									</src>
-									<dst>/etc/monasca/watchtower-monitoring-config.yml-sample</dst>
+									<dst>/etc/watchtower/monitoring-config.yml-sample</dst>
 								</data>
 							</dataSet>
 						</configuration>

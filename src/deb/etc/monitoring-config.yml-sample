@@ -1,5 +1,11 @@
 # Watchtower monitoring configuration
 name: watchtower-monitoring
+
+# Server configuration
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
   
 # Kafka producer configuration
 kafkaProducerConfiguration:
@@ -32,6 +38,12 @@ logging:
     watchtower.monitoring: info
   
   appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      target: stdout
+      logFormat: # TODO
+
     - type: file
       currentLogFilename: /var/log/watchtower/watchtower-monitoring.log
       threshold: info
