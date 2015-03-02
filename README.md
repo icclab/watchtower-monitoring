@@ -1,4 +1,4 @@
-*** Please note that all watchtower components are under heavy development and the norm is that things will break. Please be patient with us until the first stable release. ***
+*Please note that all watchtower components are under heavy development and the norm is that things will break. Please be patient with us until the first stable release.*
 
 # Overview
 
