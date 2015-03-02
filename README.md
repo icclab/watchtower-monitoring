@@ -1,10 +1,12 @@
+*** Please note that all watchtower components are under heavy development and the norm is that things will break. Please be patient with us until the first stable release. ***
+
 # Overview
 
-`watchtower-monitoring` is part of `watchtower`. Its primary role is to get and forward events from the monitoring solutions to `watchtower-workflow`
+**watchtower-monitoring** is part of **watchtower**. Its primary role is to get and forward events from the monitoring solutions to **watchtower-workflow**.
 
 ### Build Instructions
 
-The best way to install `watchtower-monitoring` is to download and build it with Maven. Please note you need to download and install `monasca-common` beforehand.
+The best way to install **watchtower-monitoring** is to download and build it with Maven. Please note you need to download and install **watchtower-common** beforehand.
 
 ```
 git clone https://github.com/icclab/watchtower-monitoring.git

@@ -27,6 +27,7 @@ import com.google.inject.Inject;
 import watchtower.monitoring.configuration.KafkaProducerConfiguration;
 import watchtower.monitoring.configuration.WatchtowerMonitoringConfiguration;
 import watchtower.common.event.Event;
+import watchtower.common.event.EventUtils;
 
 public class KafkaProducer {
   private static final Logger logger = LoggerFactory.getLogger(KafkaProducer.class);
@@ -45,7 +46,7 @@ public class KafkaProducer {
     logger.debug("Sending event: {}", event.toString());
     
     final KeyedMessage<String, String> message =
-        new KeyedMessage<String, String>(producerConfiguration.getTopic(), event.getId(), event.toString());
+        new KeyedMessage<String, String>(producerConfiguration.getTopic(), event.getId(), EventUtils.toJson(event));
     
     producer.send(message);
   }
