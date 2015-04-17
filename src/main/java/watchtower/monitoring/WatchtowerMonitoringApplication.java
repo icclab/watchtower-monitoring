@@ -13,31 +13,35 @@
  */
 package watchtower.monitoring;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import watchtower.monitoring.configuration.WatchtowerMonitoringConfiguration;
-import watchtower.monitoring.resources.EventsResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import watchtower.monitoring.configuration.WatchtowerMonitoringConfiguration;
+import watchtower.monitoring.resources.EventsResource;
+import watchtower.monitoring.resources.MonascaResource;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 public class WatchtowerMonitoringApplication extends Application<WatchtowerMonitoringConfiguration> {
-  
+
   public static void main(String[] args) throws Exception {
     new WatchtowerMonitoringApplication().run(args);
   }
 
   @Override
   public void initialize(Bootstrap<WatchtowerMonitoringConfiguration> bootstrap) {
-    
+
   }
 
   @Override
-  public void run(WatchtowerMonitoringConfiguration configuration, Environment environment) throws Exception {
-    Injector injector = Guice.createInjector(new WatchtowerMonitoringModule(configuration, environment));
-    
+  public void run(WatchtowerMonitoringConfiguration configuration, Environment environment)
+      throws Exception {
+    Injector injector =
+        Guice.createInjector(new WatchtowerMonitoringModule(configuration, environment));
+
     environment.jersey().register(injector.getInstance(EventsResource.class));
+    environment.jersey().register(injector.getInstance(MonascaResource.class));
   }
 
   @Override
