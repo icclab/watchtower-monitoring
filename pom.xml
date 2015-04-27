@@ -4,11 +4,29 @@
 
 	<groupId>watchtower</groupId>
 	<artifactId>watchtower-monitoring</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>watchtower-monitoring</name>
-	<url>http://maven.apache.org</url>
+	<description>watchtower-monitoring is part of watchtower and its primary role is to get and forward events from the monitoring solutions to watchtower-workflow</description>
+	<url>https://github.com/icclab/watchtower-monitoring</url>
+	
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<email>victor.munteanu@equillon.ro</email>
+			<name>Victor Ion Munteanu</name>
+			<url>https://github.com/nemros</url>
+			<id>nemros</id>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
