@@ -4,7 +4,7 @@
   <groupId>watchtower</groupId>
   <artifactId>watchtower-monitoring</artifactId>
   <name>watchtower-monitoring</name>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <description>watchtower-monitoring is part of watchtower and its primary role is to get and forward events from the monitoring solutions to watchtower-workflow</description>
   <url>https://github.com/icclab/watchtower-monitoring</url>
   <developers>
@@ -186,7 +186,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <watchtower.common.version>0.1.0-SNAPSHOT</watchtower.common.version>
+    <watchtower.common.version>1.0.0</watchtower.common.version>
     <mockito.version>1.9.5</mockito.version>
     <guice.version>3.0</guice.version>
     <dropwizard.version>0.7.0</dropwizard.version>
