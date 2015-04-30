@@ -35,6 +35,7 @@
 		<guice.version>3.0</guice.version>
 		<mockito.version>1.9.5</mockito.version>
 		<junit.version>4.11</junit.version>
+		<jdeb.version>1.4</jdeb.version>
 	</properties>
 	
 	<scm>
@@ -212,7 +213,7 @@
 			<plugin>
 				<artifactId>jdeb</artifactId>
 				<groupId>org.vafer</groupId>
-				<version>1.0.1</version>
+				<version>${jdeb.version}</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -220,7 +221,7 @@
 							<goal>jdeb</goal>
 						</goals>
 						<configuration>
-							<deb>${project.basedir}/debs/binaries/watchtower-monitoring-${project.version}.deb</deb>
+							<deb>${project.build.directory}/watchtower-monitoring-${project.version}.deb</deb>
 							<dataSet>
 								<data>
 									<type>file</type>
