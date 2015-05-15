@@ -1,8 +1,11 @@
 *Please note that all watchtower components are under heavy development and the norm is that things will break. Please be patient with us until the first stable release.*
 
 <div align="center">
-	<img src="https://raw.githubusercontent.com/icclab/watchtower-common/master/watchtower.png" alt="Watchtower" title="Watchtower">
+	<img src="https://raw.githubusercontent.com/icclab/watchtower-common/master/watchtower.png" alt="Watchtower" title="Watchtower">	
 </div>
+
+[![Build Status](https://travis-ci.org/icclab/watchtower-monitoring.svg?branch=master)](https://travis-ci.org/icclab/watchtower-monitoring)
+[![Coverage Status](https://coveralls.io/repos/icclab/watchtower-monitoring/badge.svg?branch=master)](https://coveralls.io/r/icclab/watchtower-monitoring?branch=master)
 
 # Overview
 
