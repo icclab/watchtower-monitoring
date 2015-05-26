@@ -46,7 +46,7 @@ public class EventsResourceTest {
   public void shouldNotCreate() {
     exception.expect(ProcessingException.class);
 
-    resources.client().target("/v1.0/events").request()
+    resources.client().target("/v1.0/events").request(MediaType.APPLICATION_JSON_TYPE)
         .post(Entity.entity("StringWhichCausesProcessingException", MediaType.APPLICATION_JSON));
   }
 }
